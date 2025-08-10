@@ -5,14 +5,11 @@ import { db } from "@/server/db";
 export const POST = async (req: Request) => {
   const { data } = await req.json();
 
-  console.log("data", data);
-
-  console.log("hhi");
   const emailAddress =
     data.email_addresses && data.email_addresses.length > 0
       ? data.email_addresses[0].email_address
       : "test@example.com";
-  console.log("debug", emailAddress);
+
   const firstName = data.first_name;
   const lastName = data.last_name;
   const imageUrl = data.profile_image_url;

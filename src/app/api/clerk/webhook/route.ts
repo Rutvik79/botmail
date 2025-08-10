@@ -1,6 +1,7 @@
 // /api/clerk/webhook
 
 import { db } from "@/server/db";
+import { set } from "zod";
 
 export const POST = async (req: Request) => {
   const { data } = await req.json();
@@ -25,6 +26,7 @@ export const POST = async (req: Request) => {
   });
 
   console.log("User created in database:", { id, emailAddress });
+  await new Promise((r) => setTimeout(r, 0));
   return new Response("webhook received", {
     status: 200,
   });

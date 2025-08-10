@@ -24,7 +24,7 @@ export const POST = async (req: Request) => {
     },
   });
 
-  console.log("User created in database:");
+  console.log("User created in database:", { id, emailAddress });
   return new Response("webhook received", {
     status: 200,
   });

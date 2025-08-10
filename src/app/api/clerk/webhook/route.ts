@@ -6,7 +6,9 @@ export const POST = async (req: Request) => {
   const { data } = await req.json();
 
   const emailAddress =
-    data.email_addresses[0].emailAddress ?? "test@example.com"; // Replace with actual email extraction logic
+    data.email_addresses && data.email_addresses.length > 0
+      ? data.email_addresses[0].emailAddress
+      : "test@example.com";
   const firstName = data.first_name;
   const lastName = data.last_name;
   const imageUrl = data.profile_image_url;
@@ -21,13 +23,8 @@ export const POST = async (req: Request) => {
       imageUrl: imageUrl,
     },
   });
-  console.log("User created in database:", {
-    id,
-    emailAddress,
-    firstName,
-    lastName,
-    imageUrl,
-  });
+
+  console.log("User created in database:");
   return new Response("webhook received", {
     status: 200,
   });

@@ -4,7 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -122,4 +123,39 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.tiptap.ProseMirror {
+  outline: none;
+}
+
+.ProseMirror h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.ProseMirror h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.ProseMirror h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.ProseMirror h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.ProseMirror h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.ProseMirror h6 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.is-active {
+  background-color: #dadada;
+  border-radius: 4px;
+  padding: 0px 2px;
 }
